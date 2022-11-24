@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap');
+
+:root {
+    --deg-initialiser: 45deg;
+}
+
 body {
     background-color: black;
     margin-top: 100px;
@@ -22,7 +28,7 @@ body {
 
 .fix .fix-bottom {
     width: 600px;
-    margin: 400px auto;
+    margin: 400px auto 0 auto;
 }
 
 .pendulum {
@@ -30,7 +36,7 @@ body {
     top: 100px;
     left: calc(50% - 150px - 25px);
     transform-origin: center;
-    animation: balance 1s linear 0s infinite alternate;
+    animation: balance 1.5s ease-in-out 0s infinite alternate;
 }
 
 .bar {
@@ -48,7 +54,36 @@ body {
     margin: -50px 0 0 calc(300px + 50%);
 }
 
+.deg-initialiser {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.deg-initialiser .deg {
+    height: 30px;
+    width: 150px;
+    background-color: transparent;
+    color:bisque;
+    text-align: center;
+    border: solid 1px darkred;
+    font-family:'Raleway', sans-serif;
+}
+
+.deg-initialiser #submit {
+    height: 40px;
+    width: 70px;
+    background-color: darkred;
+    color:bisque;
+    font-family: 'Raleway', sans-serif;
+    font-size: larger;
+    border: none;
+    border-radius: 10%;
+}
+
 @keyframes balance {
-    from {transform: rotate(45deg)}
-    to {transform: rotate(120deg)}
+    from {transform: rotate(var(--deg-initialiser))}
+    to {transform: rotate(135deg)}
 }

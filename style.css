@@ -6,11 +6,20 @@
 
 body {
     background-color: black;
-    margin-top: 100px;
+    margin-top: 40px;
+    font-family: 'Raleway', sans-serif;
+    color:bisque;
+    text-align: center;
 }
 
+
+
+
+
+/* ========================= FIXATION ====================== */
+
 .fix > * {
-    height: 30px;
+    height: 20px;
     background-color: darkred;
 }
 
@@ -31,31 +40,57 @@ body {
     margin: 400px auto 0 auto;
 }
 
+
+
+
+
+/* ========================= PENDULUM ======================== */
+
 .pendulum {
     position: absolute;
-    top: 100px;
+    top: 90px;
     left: calc(50% - 150px - 25px);
     transform-origin: center;
     animation: balance 1.5s ease-in-out 0s infinite alternate;
 }
 
-.bar {
+
+.pendulum-bar {
     width: 300px;
     height: 1px;
     background-color: bisque;
     margin: 20px 50%;
 }
 
-.ball {
+.pendulum-ball {
     width: 50px;
     height: 50px;
-    background-color: bisque;
+    background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
     border-radius: 50%;
     margin: -50px 0 0 calc(300px + 50%);
 }
 
+@keyframes balance {
+    from {transform: rotate(var(--deg-initialiser))}
+    to {transform: rotate(135deg)}
+}
+
+.pendulum-holder {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 102px; 
+    left: calc(50% - 7.5px);
+}
+
+
+
+/* ===================== DEG INITIALISER ===================== */
+
 .deg-initialiser {
-    margin: 50px 0;
+    margin: 30px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -83,7 +118,4 @@ body {
     border-radius: 10%;
 }
 
-@keyframes balance {
-    from {transform: rotate(var(--deg-initialiser))}
-    to {transform: rotate(135deg)}
-}
+

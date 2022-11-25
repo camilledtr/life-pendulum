@@ -2,18 +2,18 @@
 
 :root {
     --deg-initialiser: 45deg;
+    --x: 0;
+    --y: 0;
 }
 
 body {
-    background-color: black;
+    background: linear-gradient(0deg, rgba(253,187,45,1) 0%, rgba(251,160,37,1) 0%, rgba(22,15,28,1) 83%);
+    background-size: cover;
     margin-top: 40px;
     font-family: 'Raleway', sans-serif;
     color:bisque;
     text-align: center;
 }
-
-
-
 
 
 /* ========================= FIXATION ====================== */
@@ -24,22 +24,23 @@ body {
 }
 
 .fix .fix-top {
-    width: 200px;
+    width: 100px;
     margin: 0 auto;
 }
 
 .fix .fix-middle {
-    width: 400px;
+    width: 300px;
     transform-origin: left;
     transform: rotate(90deg);
     margin: -20px 50%;
 }
 
 .fix .fix-bottom {
-    width: 600px;
-    margin: 400px auto 0 auto;
+    width: 200px;
+    margin: 300px auto 0 auto;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 10px 5px 5px black;
 }
-
 
 
 
@@ -49,17 +50,20 @@ body {
 .pendulum {
     position: absolute;
     top: 90px;
-    left: calc(50% - 150px - 25px);
-    transform-origin: center;
+    left: calc(50% - 100px - 25px);
+    transform-origin: center; /* TODO change origin rotation to left center => adapt pendulum bar and ball,
+    so that, afterwards, we can set a large height to the .pendulum, so that when we move our mouse over,
+    there is no bug and it is fluid */
     animation: balance 1.5s ease-in-out 0s infinite alternate;
 }
 
 
 .pendulum-bar {
-    width: 300px;
+    width: 200px;
     height: 1px;
     background-color: bisque;
     margin: 20px 50%;
+    box-shadow: 20px -10px 10px 1px black;
 }
 
 .pendulum-ball {
@@ -67,7 +71,8 @@ body {
     height: 50px;
     background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
     border-radius: 50%;
-    margin: -50px 0 0 calc(300px + 50%);
+    margin: -50px 0 0 calc(200px + 50%);
+    box-shadow: 20px -10px 10px 1px rgba(0, 0, 0, 0.498);
 }
 
 @keyframes balance {
@@ -92,9 +97,13 @@ body {
 .deg-initialiser {
     margin: 30px 0;
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    justify-content: center;
     align-items: center;
+    background-color: rgb(22, 22, 22);
+    width: 100wh;
+    height: 100px;
+    margin: 0 -10px;
 }
 
 .deg-initialiser .deg {
